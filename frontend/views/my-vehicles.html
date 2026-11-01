@@ -1,0 +1,9 @@
+<!-- my-vehicles: SPA partial. Shared CSS and JavaScript load in index.html only. -->
+<header class="page-heading"><div><span class="eyebrow">PITSTOP OS / WORKSPACE</span><h1 id="page-title">My vehicles</h1></div><button class="btn btn-primary" data-action="add" data-table="vehicles">+ Add vehicle</button></header>
+<section id="view-content" aria-label="my vehicles">
+  <div class="toolbar">
+    <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search vehicles…" aria-label="Search vehicles"></label>
+    <label class="field">Status<select class="form-select" id="filter"><option value="">All statuses</option><option>In service</option><option>Available</option></select></label>
+  </div>
+  <div id="results" aria-live="polite"></div>
+</section>
