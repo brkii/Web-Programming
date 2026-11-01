@@ -22,7 +22,7 @@ Examples of tasks:
 
 - **Landing page design:** After reviewing the generated frontend, I requested changes to the logo and landing page because the initial design did not match the style I wanted for PitStop OS.
 
-- **Unnecessary UI elements:** I asked Codex to remove the car illustration and floating slogan card to make the landing page cleaner and more professional.
+- **Unnecessary UI elements:** I asked Copilot to remove the car illustration and floating slogan card to make the landing page cleaner and more professional.
 
 - **Theme improvement:** I requested a light mode option in addition to the existing dark theme, making sure the text, navigation, and dashboard components remained readable in both modes.
 
@@ -30,11 +30,11 @@ Examples of tasks:
 
 #### AI Mistake 1 – SPA Navigation Issue
 
-**Problem:** During the initial frontend generation, Codex created navigation links that reloaded the entire page instead of switching views dynamically.
+**Problem:** During the initial frontend generation, Copilot created navigation links that reloaded the entire page instead of switching views dynamically.
 
 **How I noticed it:** While testing the application, I noticed that clicking sidebar links refreshed the browser.
 
-**How I fixed it:** I asked Codex to update the routing logic in JavaScript so that the application could switch between views without a full page reload.
+**How I fixed it:** I asked Copilot to update the routing logic in JavaScript so that the application could switch between views without a full page reload.
 
 #### AI Mistake 2 – Responsive Design Issue
 
@@ -42,7 +42,7 @@ Examples of tasks:
 
 **How I noticed it:** I tested the application using the browser's responsive device mode and noticed that some elements overflowed the screen.
 
-**How I fixed it:** I adjusted the responsive CSS and asked Codex to improve the Bootstrap layout so that the sidebar and dashboard cards worked correctly on mobile devices.
+**How I fixed it:** I adjusted the responsive CSS and asked Copilot to improve the Bootstrap layout so that the sidebar and dashboard cards worked correctly on mobile devices.
 
 ### Checks
 Automated checks and browser verification are listed in MILESTONE1_CHECKLIST.md. These are assistant checks; student review is separate.
