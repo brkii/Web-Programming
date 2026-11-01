@@ -1,0 +1,8 @@
+{
+  "name": "pitstop-os",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test tests/*.test.js" },
+  "description": "Milestone 1 static SPA. No build step or npm dependencies required."
+}
