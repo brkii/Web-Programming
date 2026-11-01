@@ -1,0 +1,419 @@
+@media(min-width:1500px) {
+  .car-art {
+  height:220px
+}
+
+
+}
+
+@media(max-width:1150px) {
+  .sidebar {
+  width:210px;
+  padding-inline:14px
+}
+
+.workspace {
+  margin-left:210px
+}
+
+.workspace main {
+  padding-inline:24px
+}
+
+.topbar {
+  padding-inline:24px
+}
+
+.metrics {
+  grid-template-columns:repeat(2,1fr)
+}
+
+.dashboard-grid {
+  grid-template-columns:1fr 1fr
+}
+
+.greeting {
+  align-items:flex-start
+}
+
+.greeting h1 {
+  font-size:28px
+}
+
+.hero h1 {
+  font-size:60px
+}
+
+.hero {
+  min-height:520px
+}
+
+.hero-note {
+  flex-direction:column;
+  gap:10px
+}
+
+.form-layout {
+  grid-template-columns:1fr
+}
+
+.conversation-layout {
+  grid-template-columns:1fr
+}
+
+.landing-cards {
+  gap:15px
+}
+
+.landing-cards article {
+  padding:22px
+}
+
+
+}
+
+@media(max-width:850px) {
+  .sidebar {
+  transform:translateX(-100%);
+  transition:transform .2s;
+  width:240px;
+  box-shadow:20px 0 80px #0007
+}
+
+.sidebar.open {
+  transform:translateX(0)
+}
+
+.workspace {
+  margin-left:0
+}
+
+.mobile-menu {
+  display:block
+}
+
+.topbar {
+  gap:12px
+}
+
+.topbar>span {
+  margin-right:auto
+}
+
+.breadcrumb {
+  display:none
+}
+
+.hero {
+  grid-template-columns:1fr;
+  padding-top:30px
+}
+
+.hero-copy {
+  max-width:600px
+}
+
+.hero-visual {
+  min-height:320px;
+  margin-top:25px;
+  max-width:600px
+}
+
+.hero-visual>img {
+  width:100%;
+  margin:0
+}
+
+.hero h1 {
+  font-size:68px
+}
+
+.hero-actions {
+  margin-bottom:30px
+}
+
+.hero-note {
+  flex-direction:row
+}
+
+.feature-strip {
+  gap:18px;
+  flex-wrap:wrap
+}
+
+.feature-strip>span:first-child {
+  width:100%;
+  text-align:center
+}
+
+.landing-cards {
+  grid-template-columns:1fr
+}
+
+.landing-cards article {
+  padding:28px
+}
+
+.how-section,.workshop-promo {
+  grid-template-columns:1fr;
+  gap:25px
+}
+
+.landing-section {
+  padding-block:55px
+}
+
+.auth-layout {
+  margin:30px 20px;
+  grid-template-columns:1fr
+}
+
+.auth-story {
+  display:none
+}
+
+.auth-panel {
+  padding:35px
+}
+
+.public-nav {
+  padding:20px
+}
+
+.public-nav nav {
+  gap:15px
+}
+
+footer {
+  flex-wrap:wrap
+}
+
+.greeting {
+  flex-wrap:wrap
+}
+
+.greeting .btn {
+  margin-top:5px
+}
+
+
+}
+
+@media(max-width:580px) {
+  .workspace main {
+  padding:15px
+}
+
+.topbar {
+  padding:0 15px;
+  height:65px
+}
+
+.demo-switch {
+  gap:6px
+}
+
+.demo-switch label {
+  font-size:8px
+}
+
+.demo-switch select {
+  max-width:104px;
+  font-size:11px
+}
+
+.topbar>span {
+  font-size:10px
+}
+
+.demo-notice {
+  font-size:10px;
+  line-height:1.7;
+  margin-bottom:20px
+}
+
+.metrics {
+  gap:10px
+}
+
+.metric {
+  padding:15px
+}
+
+.metric>strong {
+  font-size:26px
+}
+
+.metrics.compact {
+  grid-template-columns:1fr
+}
+
+.metric-label {
+  font-size:10px
+}
+
+.metric small {
+  font-size:9px
+}
+
+.dashboard-grid,.vehicle-grid,.order-grid,.form-grid {
+  grid-template-columns:1fr
+}
+
+.full {
+  grid-column:auto
+}
+
+.panel {
+  padding:18px
+}
+
+.toolbar {
+  flex-wrap:wrap;
+  gap:10px
+}
+
+.search {
+  flex-basis:100%
+}
+
+.toolbar .field {
+  flex:1;
+  min-width:120px
+}
+
+.page-heading {
+  flex-wrap:wrap
+}
+
+.page-heading h1 {
+  font-size:28px
+}
+
+.greeting h1 {
+  font-size:27px
+}
+
+.greeting p {
+  font-size:12px
+}
+
+.hero {
+  padding-inline:22px
+}
+
+.hero h1 {
+  font-size:55px;
+  letter-spacing:-2.5px
+}
+
+.hero .eyebrow {
+  font-size:8px
+}
+
+.hero-copy>p {
+  font-size:14px
+}
+
+.hero-actions {
+  flex-wrap:wrap
+}
+
+.hero-note {
+  font-size:8px;
+  gap:12px
+}
+
+.hero-visual {
+  min-height:280px
+}
+
+.floating-status {
+  bottom:10px;
+  padding:12px;
+  font-size:10px
+}
+
+.floating-status small {
+  font-size:9px
+}
+
+.visual-label {
+  left:15px;
+  font-size:8px
+}
+
+.feature-strip {
+  gap:12px;
+  font-size:11px
+}
+
+.landing-section,.workshop-promo {
+  padding-inline:22px
+}
+
+.section-intro h2,.how-section h2,.workshop-promo h2 {
+  font-size:31px
+}
+
+.public-nav .brand {
+  font-size:19px
+}
+
+.public-nav .btn {
+  font-size:10px;
+  padding:9px
+}
+
+.public-nav nav>a:first-child {
+  font-size:12px
+}
+
+.auth-panel {
+  padding:25px
+}
+
+.message {
+  max-width:100%
+}
+
+.message>div {
+  flex-direction:column;
+  gap:4px
+}
+
+.workspace-footer {
+  padding:20px 15px;
+  font-size:8px
+}
+
+.chart-row {
+  grid-template-columns:110px 1fr 16px
+}
+
+.car-art {
+  height:170px
+}
+
+dialog {
+  padding:20px
+}
+
+.cost-total {
+  flex-direction:column;
+  gap:8px
+}
+
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+  * {
+  transition:none!important;
+  scroll-behavior:auto!important
+}
+
+
+}
+
+
