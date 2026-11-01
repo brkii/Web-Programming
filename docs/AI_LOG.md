@@ -3,22 +3,28 @@
 ## Milestone 1
 
 ### Tools and tasks
-Codex assisted with the initial implementation and subsequent changes according to the student's requirements.
+Copilot assisted with the initial implementation and subsequent changes according to the student's requirements.
 
 Examples of tasks:
-- Organizing project folders and .gitignore.
 - Preparing and adjusting frontend views and shared components.
 - Checking sample-data relationships and SPA navigation.
-- Adjusting the design following the student's review.
+- Helping create and refine the PitStop OS logo, following the student's design instructions and feedback.
 
 ### Important prompts
-- "samo prati onu formu kako je trazeno od profesorice vezano za podjelu fajlova kako ce izgledati"
-- "kao glavnu osobu stavi Amina Brković"
-- "moramo se pobrinuti da ima light mode"
-- "nek je slicno kao na onom labu sto sam ti poslala"
+- "Add a light mode option to the PitStop OS frontend while keeping the existing dark theme as the default. Make sure the layout, text, and components remain readable in both themes."
+
+- "Use the structure and coding approach from the lab materials I provided as a reference. Keep the project consistent with the professor's requirements, especially the SPA structure, Bootstrap 5, and separation of HTML, CSS, and JavaScript."
+- "Create a responsive sidebar navigation for both the customer and admin dashboards using Bootstrap 5. Make sure the navigation works correctly on mobile devices and follows the existing PitStop OS design. Do not change any unrelated files."
 
 ### Review and corrections
-The student requested a shorter agent setup, a different logo and landing page, removal of the car illustration and floating slogan card, and a light theme.
+
+- **Agent setup:** I asked Copilot to simplify the initial agent configuration and keep only the necessary instructions, following the structure provided in the lab materials.
+
+- **Landing page design:** After reviewing the generated frontend, I requested changes to the logo and landing page because the initial design did not match the style I wanted for PitStop OS.
+
+- **Unnecessary UI elements:** I asked Codex to remove the car illustration and floating slogan card to make the landing page cleaner and more professional.
+
+- **Theme improvement:** I requested a light mode option in addition to the existing dark theme, making sure the text, navigation, and dashboard components remained readable in both modes.
 
 ### Where the AI was wrong
 
