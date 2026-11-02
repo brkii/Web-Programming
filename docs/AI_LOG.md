@@ -45,4 +45,4 @@ Examples of tasks:
 **How I fixed it:** I adjusted the responsive CSS and asked Copilot to improve the Bootstrap layout so that the sidebar and dashboard cards worked correctly on mobile devices.
 
 ### Checks
-Automated checks and browser verification are listed in MILESTONE1_CHECKLIST.md. These are assistant checks; student review is separate.
+Frontend checks cover navigation, sample-data relationships and escaping. Test commands are listed in README.md.
