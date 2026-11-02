@@ -46,3 +46,31 @@ Examples of tasks:
 
 ### Checks
 Frontend checks cover navigation, sample-data relationships and escaping. Test commands are listed in README.md.
+
+## Milestone 2
+
+### Tools and tasks
+Copilot helped implement the Milestone 2 SQL export,and checked them on MySQL and XAMPP MariaDB.
+
+### Important prompt
+- "Review the sample data in pitstop_os.sql and make sure it includes realistic vehicles, customers, service requests, and repair records. Keep the data consistent so that each vehicle belongs to the correct customer and the related service records make sense."
+
+- "Update the DAO classes to include methods for retrieving a customer's vehicles and their service history. Follow the existing BaseDao structure and keep the queries inside the DAO layer. Do not modify the frontend or implement API routes yet."
+
+### Where the AI was wrong
+Student-provided reflection:
+
+**1. Incorrect service order cost calculation**
+
+- **What was wrong:** Copilot initially designed the `service_order_items` table without storing the unit price for each item, which would make it difficult to preserve the original repair costs.
+- **How I noticed it:** While reviewing the database structure, I realized that changing the price of a service or spare part could also affect how historical repair costs were calculated.
+- **How I fixed it:** I asked Copilot to add a `unit_price` column to `service_order_items` so that each work order keeps the price used at the time of the repair.
+
+**2. Missing support ticket relationship**
+
+- **What was wrong:** Copilot initially created the support_tickets table without a relationship to service_requests.
+- **How I noticed it:** When reviewing the ERD, I noticed that customers could open support tickets, but the tickets could not be connected to a specific service request.
+- **How I fixed it:** I asked Copilot to add a nullable service_request_id foreign key to support_tickets, allowing tickets to be linked to repairs when needed.
+
+### Checks
+PHP syntax, SQL import, CRUD, constraints, prepared statements and rollback were checked. Test commands are listed in README.md.
