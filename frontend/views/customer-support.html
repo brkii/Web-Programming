@@ -1,0 +1,9 @@
+<!-- customer-support: SPA partial. Shared CSS and JavaScript load in index.html only. -->
+<header class="page-heading"><div><span class="eyebrow">PITSTOP OS / WORKSPACE</span><h1 id="page-title">Support center</h1></div><button class="btn btn-primary" data-action="new-ticket">+ New ticket</button></header>
+<section id="view-content" aria-label="customer support">
+  <div class="toolbar">
+    <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search tickets…" aria-label="Search tickets"></label>
+    <label class="field">Status<select class="form-select" id="filter"><option value="">All statuses</option><option>Open</option><option>In Progress</option><option>Waiting for Customer</option><option>Resolved</option><option>Closed</option></select></label>
+  </div>
+  <div id="results" aria-live="polite"></div>
+</section>

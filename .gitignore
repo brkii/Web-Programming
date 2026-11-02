@@ -1,0 +1,13 @@
+backend/config/config.php
+.env
+.env.*
+!.env.example
+backend/logs/*
+!backend/logs/.gitkeep
+/vendor/
+/backend/vendor/
+node_modules/
+tmp/
+test-results/
+*.log
+.DS_Store

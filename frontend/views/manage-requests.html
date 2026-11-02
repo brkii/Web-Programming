@@ -1,0 +1,10 @@
+<!-- manage-requests: SPA partial. Shared CSS and JavaScript load in index.html only. -->
+<header class="page-heading"><div><span class="eyebrow">PITSTOP OS / WORKSPACE</span><h1 id="page-title">Service requests</h1></div></header>
+<section id="view-content" aria-label="manage requests">
+  <div class="toolbar">
+    <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search requests…" aria-label="Search requests"></label>
+    <label class="field">Status<select class="form-select" id="filter"><option value="">All statuses</option><option>Requested</option><option>Approved</option><option>Diagnosing</option><option>In Progress</option><option>Ready for Pickup</option><option>Completed</option><option>Cancelled</option></select></label>
+    <label class="field">Urgency<select class="form-select" id="priority"><option value="">All priorities</option><option>Normal</option><option>High</option><option>Urgent</option></select></label>
+  </div>
+  <div id="results" aria-live="polite"></div>
+</section>
