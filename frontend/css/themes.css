@@ -138,3 +138,22 @@ a{color:#eb8c95}a:hover{color:#f8b4bb}
 .sidebar .brand-name{font-size:25px}
 .sidebar .brand-symbol{width:64px;height:32px}
 @media(max-width:580px){.brand .brand-symbol{width:62px;height:31px}.brand .brand-name{font-size:24px}.brand .brand-os{font-size:8px;letter-spacing:1px}.brand{gap:8px}.brand-wordmark{gap:5px}}
+
+/* Compact garage cards: vehicle identity first, body-style drawing second. */
+.vehicle-card{padding:22px;min-width:0}
+.vehicle-card .panel-heading{margin-bottom:20px;gap:12px}
+.vehicle-card .panel-heading .eyebrow{font-size:10px;letter-spacing:1.2px}
+.vehicle-card-main{display:grid;grid-template-columns:minmax(0,1fr) 42%;align-items:center;gap:12px;min-height:95px;margin-bottom:20px}
+.vehicle-card .vehicle-identity h2{font-size:22px;letter-spacing:-.7px;margin:0 0 10px;line-height:1.2;overflow-wrap:anywhere}
+.vehicle-plate{display:inline-block;color:var(--muted);font-size:12px;letter-spacing:1px;font-variant-numeric:tabular-nums}
+.vehicle-drawing{color:var(--text);width:100%;max-width:280px;margin:16px auto}
+.vehicle-drawing svg{display:block;width:100%;height:auto}
+.vehicle-card .vehicle-drawing{margin:0;max-width:none}
+.vehicle-specs{display:flex;gap:28px;border-top:1px solid var(--line);padding:17px 0 20px;font-size:13px;font-weight:500}
+.vehicle-specs small{display:block;font-size:8px;letter-spacing:1.4px;color:var(--muted);margin-bottom:6px}
+.vehicle-specs em{font-style:normal;font-size:11px;color:var(--muted)}
+.vehicle-card .card-actions{gap:8px;flex-wrap:wrap;margin-top:0}
+.vehicle-card .card-actions .btn{font-size:11px;padding:9px 13px}
+.vehicle-card .status-in-service{background:#ed293e12;border-color:#ed293e38;color:#f2818c}
+[data-theme="light"] .vehicle-card .status-in-service{background:#fff0f1;border-color:#ed293e38;color:#a51c2c}
+@media(max-width:580px){.vehicle-card{padding:18px}.vehicle-card .vehicle-identity h2{font-size:20px}.vehicle-card-main{gap:8px;margin-bottom:14px}.vehicle-specs{gap:24px}}

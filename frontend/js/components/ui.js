@@ -11,4 +11,12 @@ export function toast(message){const t=document.querySelector('#toast');t.textCo
 let lastFocus;
 export function modal(title,body){lastFocus=document.activeElement;const d=document.querySelector('#modal');d.innerHTML=`<header class="modal-heading"><h2 id="modal-title">${esc(title)}</h2>${button('×','close','aria-label="Close dialog"','icon')}</header>${body}`;d.showModal();d.addEventListener('close',()=>lastFocus?.focus(),{once:true});}
 export const closeModal=()=>document.querySelector('#modal').close();
-export const car=()=>`<div class="vehicle-placeholder" aria-label="Vehicle record"><span>VEHICLE RECORD</span><svg viewBox="0 0 240 64" aria-hidden="true"><path d="M12 54h216M35 40h170M55 26h130M85 12h70" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>`;
+// Compact body-style drawings keep vehicle cards useful without a promotional photo.
+export const car=(vehicle={})=>{
+ const model=String(vehicle?.model||'').toLowerCase();
+ const suv=/xc60|xc90|suv|q[3578]|x[1357]/.test(model);
+ const hatch=/golf|a3|hatch/.test(model);
+ const roof=suv?'M35 52 53 26Q57 22 66 22H132Q143 22 151 32L170 49':hatch?'M33 54 47 30Q50 26 59 26H122Q132 26 141 35L160 49':'M30 53 62 31Q68 27 77 27H119Q129 27 140 36L159 48';
+ const glass=suv?'M55 46 65 29H94V46ZM101 29H130Q137 29 142 36L151 46H101Z':hatch?'M53 47 60 33H90V47ZM97 33H120L139 47H97Z':'M59 47 77 34H99V47ZM106 34H120L141 47H106Z';
+ return `<div class="vehicle-drawing" aria-hidden="true"><svg viewBox="0 0 220 100" fill="none"><path d="M17 79H205" stroke="currentColor" opacity=".12"/><path d="${roof}" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M35 52 19 56 15 65 17 73H34a15 15 0 0 1 30 0h91a15 15 0 0 1 30 0h15l3-12-10-8-33-5" fill="currentColor" fill-opacity=".07" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="${glass}" fill="currentColor" fill-opacity=".18"/><path d="M96 51v18M151 53l-5 16M105 54h10" stroke="currentColor" stroke-opacity=".4" stroke-width="1.5"/><path d="m19 57 12-2v6H17" fill="#ed293e"/><path d="m190 55 10 4-2 4-11-3" fill="currentColor"/><path d="M72 76h75" stroke="#ed293e" stroke-width="2"/>${[49,170].map(x=>`<circle cx="${x}" cy="73" r="11" fill="var(--panel)" stroke="currentColor" stroke-width="2.5"/><circle cx="${x}" cy="73" r="5" stroke="currentColor" stroke-opacity=".45" stroke-width="2"/>`).join('')}</svg></div>`;
+};
