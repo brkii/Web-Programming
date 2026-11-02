@@ -1,6 +1,6 @@
-# PitStop OS - draft entity relationship diagram
+# PitStop OS - entity relationship diagram
 
-Milestone 1 planning only. No database or SQL is implemented. GitHub renders this Mermaid diagram.
+Implemented in Milestone 2 in `pitstop_os.sql`. GitHub renders this Mermaid diagram. Minimum child counts and cross-table business rules remain service-layer responsibilities for M3.
 
 ```mermaid
 erDiagram
@@ -129,8 +129,8 @@ erDiagram
 - Restrict deleting referenced customers, vehicles, services or parts. Preserve historical orders and conversations. Plan archiving instead of destructive history deletion.
 - Requests: Requested, Approved, Diagnosing, In Progress, Ready for Pickup, Completed, Cancelled. Orders use the corresponding workshop subset. Update both in one transaction later.
 - Tickets: Open, In Progress, Waiting for Customer, Resolved, Closed. A ticket begins with one message created in the same transaction.
-- Future passwords are hashed server-side; M1 has no password field in mock data and no real authentication.
-- In M2 create the schema and DAO layer. Business rules/transactions and routes follow in M3; actual authorization follows in M4.
+- M2 sample passwords use bcrypt hashes; the static frontend still has no real authentication. UserDao excludes hashes from ordinary reads.
+- M2 implements the schema and DAO layer. Business rules/transaction orchestration and routes follow in M3; actual authorization follows in M4.
 
 ## Frontend collection mapping
 `users`, `vehicles`, `services`, `parts` retain their names. `requests` -> service_requests; `orders` -> service_orders; `items` -> service_order_items; `tickets` -> support_tickets; `messages` -> ticket_messages. These short frontend collection names are internal; API services will normalize responses.
