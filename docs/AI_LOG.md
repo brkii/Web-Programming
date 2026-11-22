@@ -74,3 +74,34 @@ Student-provided reflection:
 
 ### Checks
 PHP syntax, SQL import, CRUD, constraints, prepared statements and rollback were checked. Test commands are listed in README.md.
+
+## Milestone 3
+
+### Tools and tasks
+
+Copilot was used to assist with the service layer, FlightPHP CRUD routes, Swagger documentation, and NHTSA VIN decoding integration, following the project requirements and provided lab materials.
+
+### Important prompts
+
+- "Can you check if the service layer follows the correct structure and uses the existing DAO classes?"
+- "Some endpoints are not showing up in Swagger. Can you check what might be causing this?"
+- "Can you help me check the VIN decoding functionality and how invalid responses are handled?"
+- "I'm getting an error when cancelling an order. Can you help me find the problem without changing unrelated code?"
+
+### Where the AI was wrong
+
+**1. Swagger documentation issue**
+
+- **What was wrong:** An unsupported annotation parameter caused some API endpoints to be missing from the generated Swagger documentation.
+- **How it was noticed:** While checking Swagger UI, I noticed that not all endpoints were displayed correctly.
+- **How it was fixed:** The unsupported parameter was removed and the OpenAPI documentation was generated again.
+
+**2. Stock validation issue**
+
+- **What was wrong:** The stock quantity was not properly validated when reserved parts were returned after an order cancellation.
+- **How it was noticed:** Testing an order cancellation with a high stock quantity resulted in a database error.
+- **How it was fixed:** An additional stock limit check was added to prevent invalid updates, and rollback was used to keep the data consistent.
+
+### Checks
+
+Tested CRUD operations through Swagger, including creating, retrieving, updating, and deleting service records. Also checked invalid input values, OpenAPI documentation, VIN decoding, and external API error handling.
