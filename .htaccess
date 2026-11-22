@@ -1,0 +1,3 @@
+Options -Indexes
+RewriteEngine On
+RewriteRule ^(?:\.|tmp(?:/|$)|tests(?:/|$)|database(?:/|$)|docs(?:/|$)) - [F,L]
