@@ -4,6 +4,7 @@ declare(strict_types=1);
 abstract class BaseDao
 {
     private static ?PDO $connection = null;
+    private static array $transactions = [];
     protected string $table;
     protected array $columns;
     protected string $readColumns = '*';
@@ -110,13 +111,44 @@ abstract class BaseDao
         return array_intersect_key($data, array_flip($this->columns));
     }
 
-    // Services will decide which operations belong in a transaction in M3.
-    public function beginTransaction(): void { self::connection()->beginTransaction(); }
-    public function commit(): void { self::connection()->commit(); }
+    public function lockById(int $id): ?array
+    {
+        return $this->queryOne("SELECT {$this->readColumns} FROM `{$this->table}` WHERE id = :id FOR UPDATE", ['id' => $id]);
+    }
+
+    public function findBy(string $column, mixed $value): array
+    {
+        if (!in_array($column, $this->columns, true)) {
+            throw new InvalidArgumentException('Unknown lookup column.');
+        }
+        return $this->query("SELECT {$this->readColumns} FROM `{$this->table}` WHERE `$column` = :value ORDER BY id", ['value' => $value]);
+    }
+
+    // Nested service operations use savepoints on the same PDO connection.
+    public function beginTransaction(): void
+    {
+        $savepoint = self::connection()->inTransaction() ? 'pitstop_' . count(self::$transactions) : null;
+        if ($savepoint === null) { self::connection()->beginTransaction(); }
+        else { self::connection()->exec("SAVEPOINT $savepoint"); }
+        self::$transactions[] = $savepoint;
+    }
+
+    public function commit(): void
+    {
+        $savepoint = array_pop(self::$transactions);
+        if ($savepoint === null) { self::connection()->commit(); }
+        else { self::connection()->exec("RELEASE SAVEPOINT $savepoint"); }
+    }
+
     public function rollback(): void
     {
+        $savepoint = array_pop(self::$transactions);
         if (self::connection()->inTransaction()) {
-            self::connection()->rollBack();
+            if ($savepoint === null) { self::connection()->rollBack(); }
+            else {
+                self::connection()->exec("ROLLBACK TO SAVEPOINT $savepoint");
+                self::connection()->exec("RELEASE SAVEPOINT $savepoint");
+            }
         }
     }
 }

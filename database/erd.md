@@ -1,6 +1,6 @@
 # PitStop OS - entity relationship diagram
 
-Implemented in Milestone 2 in `pitstop_os.sql`. GitHub renders this Mermaid diagram. Minimum child counts and cross-table business rules remain service-layer responsibilities for M3.
+Implemented in Milestone 2 in `pitstop_os.sql`. GitHub renders this Mermaid diagram. M3 services enforce minimum child counts and cross-table business rules without changing the schema.
 
 ```mermaid
 erDiagram
@@ -127,10 +127,10 @@ erDiagram
 - Stock, mileage, prices and costs must be nonnegative; duration must be positive. Money uses DECIMAL(10,2), never floating-point storage. Store item prices as historical snapshots.
 - final_cost remains NULL until completion. Estimated cost is a quotation; final cost is the sum of order item quantities multiplied by snapshot prices. No tax or discount model is included in M1.
 - Restrict deleting referenced customers, vehicles, services or parts. Preserve historical orders and conversations. Plan archiving instead of destructive history deletion.
-- Requests: Requested, Approved, Diagnosing, In Progress, Ready for Pickup, Completed, Cancelled. Orders use the corresponding workshop subset. Update both in one transaction later.
+- Requests: Requested, Approved, Diagnosing, In Progress, Ready for Pickup, Completed, Cancelled. Orders use the corresponding workshop subset. M3 updates both in one transaction.
 - Tickets: Open, In Progress, Waiting for Customer, Resolved, Closed. A ticket begins with one message created in the same transaction.
 - M2 sample passwords use bcrypt hashes; the static frontend still has no real authentication. UserDao excludes hashes from ordinary reads.
-- M2 implements the schema and DAO layer. Business rules/transaction orchestration and routes follow in M3; actual authorization follows in M4.
+- M2 implements the schema and DAO layer; M3 adds business rules, transactions and routes. Actual authorization follows in M4.
 
 ## Frontend collection mapping
 `users`, `vehicles`, `services`, `parts` retain their names. `requests` -> service_requests; `orders` -> service_orders; `items` -> service_order_items; `tickets` -> support_tickets; `messages` -> ticket_messages. These short frontend collection names are internal; API services will normalize responses.

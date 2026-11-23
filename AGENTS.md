@@ -2,15 +2,15 @@
 
 ## Project
 PitStop OS: automotive service and customer support SPA.
-Roles: customer, admin, mechanic. Current scope: Milestone 2 (database and DAO).
+Roles: customer, admin, mechanic. Current scope: Milestone 3 (services, REST API, Swagger and external API).
 
 ## Technology stack
 - Frontend: HTML, CSS, JavaScript, Bootstrap.
-- Backend: PHP 8.2+, PDO and MySQL; FlightPHP routes follow in Milestone 3.
+- Backend: PHP 8.2+, FlightPHP, PDO and MySQL; swagger-php uses PHP 8 attributes.
 
 ## Folder structure
 - frontend/: css/, js/, views/, assets/ and index.html.
-- backend/: routes/, services/, dao/, middleware/, config/, logs/.
+- backend/: routes/, services/, dao/, utils/, middleware/, config/, logs/, public/v1/docs/.
 - database/: ERD and SQL export with sample data.
 - docs/: project documentation and AI_LOG.md.
 
@@ -20,9 +20,13 @@ Roles: customer, admin, mechanic. Current scope: Milestone 2 (database and DAO).
 - Backend flow: route -> service -> DAO -> database. Only services call DAO.
 - Use PDO prepared statements; never commit secrets or logs.
 - DAOs share BaseDao and whitelist writable columns. User reads exclude password hashes.
-- Keep M2 tests separate from application routes. Business rules and HTTP endpoints follow in M3.
+- Keep tests in tests/, outside application routes. Use an isolated database for API tests.
+- Services validate ownership, statuses, stock and price snapshots; grouped changes use transactions.
+- Keep routes thin and update Swagger when endpoints change. JWT and frontend API integration follow in M4.
+- External calls need timeouts, logged failures and friendly errors.
 - JS names: camelCase; PHP classes: PascalCase; database names: snake_case.
 - Follow the student's agreed requirements and current milestone.
 - Record actual AI work and corrections.
 - Discuss AI-log mistakes with the student before finalizing them.
+- Do not commit or push without the student's approval.
 

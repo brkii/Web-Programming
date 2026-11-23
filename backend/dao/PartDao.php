@@ -17,7 +17,7 @@ class PartDao extends BaseDao
     public function changeStock(int $id, int $delta): int
     {
         return $this->execute('UPDATE parts SET quantity = quantity + :delta
-            WHERE id = :id AND quantity + :checkDelta >= 0',
-            ['id' => $id, 'delta' => $delta, 'checkDelta' => $delta]);
+            WHERE id = :id AND quantity + :checkDelta >= 0 AND quantity + :upperDelta <= 2147483647',
+            ['id' => $id, 'delta' => $delta, 'checkDelta' => $delta, 'upperDelta' => $delta]);
     }
 }
